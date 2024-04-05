@@ -13,8 +13,9 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 100),
             const Image(image: AssetImage('images/icon quiz2.png')),
-            const SizedBox(height: 100),
+            const SizedBox(height: 90),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
@@ -38,6 +39,16 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 100,
+            ),
+            Text(
+              'Developed by Kelompok 10 MI2022B',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12
+              ),
+            )
           ],
         ),
       ),
