@@ -75,7 +75,8 @@ class _QuizScreenState extends State<QuizScreen> {
               itemCount: question.pilihanJawaban.length, // Jumlah item dalam ListView
               itemBuilder: (context, index) { // Membangun setiap item dalam ListView
                 return GestureDetector( // Menggunakan GestureDetector untuk menangkap ketukan pada item
-                  // Menetapkan fungsi pilihJawaban(index) ketika item ditekan, kecuali jika jawaban sudah dipilih sebelumnya
+                  // Menetapkan fungsi pilihJawaban(index) ketika item ditekan
+                  // kecuali jika jawaban sudah dipilih sebelumnya
                   onTap: indexJawabanDipilih == null
                       ? () => pilihJawaban(index)
                       : null,
