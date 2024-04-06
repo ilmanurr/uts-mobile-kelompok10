@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_apk/screens/quiz_screen.dart'; // Import layar kuis untuk digunakan saat pengguna memilih untuk memulai kuis.
+// Import quiz screen untuk digunakan saat pengguna memilih untuk memulai quis
+import 'package:quiz_apk/screens/quiz_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
