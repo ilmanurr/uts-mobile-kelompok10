@@ -64,7 +64,7 @@ class ResultScreen extends StatelessWidget {
               )
             ],
           ),
-          // Tombol untuk merestart quis
+          // Tombol untuk merestart quiz
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
