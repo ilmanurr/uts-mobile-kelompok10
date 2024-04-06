@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_apk/models/bank_soal.dart'; // Import daftar pertanyaan
-import 'package:quiz_apk/screens/quiz_screen.dart'; // Import layar kuis untuk digunakan saat pengguna memilih restart quis.
+import 'package:quiz_apk/screens/quiz_screen.dart'; // Import layar kuis untuk digunakan saat pengguna memilih restart quiz.
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
     super.key,
-    required this.score, // Skor dari quis yang ditampilkan di layar hasi
+    required this.score, // Skor dari quiz yang ditampilkan di layar hasi
   });
 
-  final int score; // Variabel untuk menyimpan skor dari quis
+  final int score; // Variabel untuk menyimpan skor dari quiz
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,7 @@ class ResultScreen extends StatelessWidget {
               backgroundColor: Colors.blueGrey[900],
             ),
             child: const Text(
-              'Restart Quiz', // Label tombol untuk memulai kembali kuis
+              'Restart Quiz', // Label tombol untuk memulai kembali quiz
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
