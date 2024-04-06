@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_apk/screens/quiz_screen.dart'; // Import halaman quiz jika belum diimport
+import 'package:quiz_apk/screens/quiz_screen.dart'; // Import layar kuis untuk digunakan saat pengguna memilih untuk memulai kuis.
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -13,13 +13,13 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 100),
-            const Image(image: AssetImage('images/icon quiz2.png')),
-            const SizedBox(height: 90),
+            SizedBox(height: 110), // Spasi kosong di atas gambar
+            const Image(image: AssetImage('images/icon quiz2.png')), // Menampilkan gambar logo aplikasi
+            const SizedBox(height: 100), // Spasi kosong antara gambar dan tombol "Mulai Quiz"
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => const QuizScreen(),
+                  builder: (_) => const QuizScreen(), // Menavigasi ke quiz screen ketika tombol ditekan
                 ));
               },
               style: ElevatedButton.styleFrom(
@@ -27,7 +27,7 @@ class WelcomeScreen extends StatelessWidget {
                   vertical: 12,
                   horizontal: 50,
                 ),
-                backgroundColor: Colors.blueGrey[900], // Warna latar belakang tombol
+                backgroundColor: Colors.blueGrey[900],
               ),
               child: const Text(
                 'Mulai Quiz',
@@ -39,14 +39,13 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 100,
-            ),
+            SizedBox(height: 100,), // Spasi kosong di bawah tombol "Mulai Quiz"
+            // Informasi credite pembuat aplikasi
             Text(
-              'Developed by Kelompok 10 MI2022B',
+              'Created by Kelompok 10 MI2022B',
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 12
+                color: Colors.blueGrey[900],
+                fontSize: 11
               ),
             )
           ],

@@ -3,23 +3,25 @@ import 'package:flutter/material.dart';
 class AnswerCard extends StatelessWidget {
   const AnswerCard({
     super.key,
-    required this.question,
-    required this.yangDipilih,
-    required this.indexSaatIni,
-    required this.indexJawabanBenar,
-    required this.indexJawabanDipilih,
+    required this.question, // Pertanyaan yang akan ditampilkan dalam answer card
+    required this.yangDipilih, // Apakah jawaban ini dipilih oleh pengguna atau tidak
+    required this.indexSaatIni, // Indeks pertanyaan saat ini dalam daftar pertanyaan
+    required this.indexJawabanBenar, // Indeks jawaban yang benar dari pertanyaan
+    required this.indexJawabanDipilih, // Indeks jawaban yang dipilih oleh pengguna
   });
 
-  final String question;
-  final bool yangDipilih;
-  final int? indexJawabanBenar;
-  final int? indexJawabanDipilih;
-  final int indexSaatIni;
+  final String question; // Pertanyaan yang ditampilkan dalam answer card
+  final bool yangDipilih; // Menunjukkan apakah jawaban ini dipilih oleh pengguna atau tidak
+  final int? indexJawabanBenar; // Indeks jawaban yang benar dari pertanyaan
+  final int? indexJawabanDipilih; // Indeks jawaban yang dipilih oleh pengguna
+  final int indexSaatIni; // Indeks pertanyaan saat ini dalam daftar pertanyaan
 
   @override
   Widget build(BuildContext context) {
+    // Menentukan apakah jawaban ini benar atau salah berdasarkan indeks jawaban saat ini dan jawaban yang dipilih.
     bool apakahJawabanBenar = indexSaatIni == indexJawabanBenar;
     bool apakahJawabanSalah = !apakahJawabanBenar && yangDipilih;
+
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
         child: indexJawabanDipilih != null
@@ -32,9 +34,9 @@ class AnswerCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                       color: apakahJawabanBenar
-                          ? Colors.green
+                          ? Colors.green // Jika jawaban benar, tampilkan border warna hijau
                           : apakahJawabanSalah
-                              ? Colors.red
+                              ? Colors.red // Jika jawaban salah, tampilkan border warna merah
                               : Colors.white24),
                 ),
                 child: Row(
@@ -51,6 +53,7 @@ class AnswerCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
+                    // Menampilkan ikon centang jika jawaban benar, dan silang jika jawaban salah
                     apakahJawabanBenar
                         ? buatIconBenar()
                         : apakahJawabanSalah
@@ -87,6 +90,7 @@ class AnswerCard extends StatelessWidget {
   }
 }
 
+// Widget untuk membuat ikon centang untuk jawaban yang benar
 Widget buatIconBenar() => const CircleAvatar(
       radius: 15,
       backgroundColor: Colors.green,
@@ -96,6 +100,7 @@ Widget buatIconBenar() => const CircleAvatar(
       ),
     );
 
+// Widget untuk membuat ikon silang untuk jawaban yang salah
 Widget buatIconSalah() => const CircleAvatar(
       radius: 15,
       backgroundColor: Colors.red,
